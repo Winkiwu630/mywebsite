@@ -10,8 +10,24 @@
 
     <body>
 
-      <h1>How did you find this page?</h1>
+      <h1>What brought you here today?</h1>
       <p><strong>Note:</strong>This form does absoluetly nothing and I will not be able to see your responses. Enjoy!</p>
-      
+
+      <form action="howdidyougethere.php" method="post">
+
+        Name:<br>
+        <input type="text" name="name" value="Your name">
+
+        
+        <p> How did you find this website?<br>
+          <select>
+            <option>From the owner</option>
+            <option>Google</option>
+            <option>A friend</option>
+            <option value="None of your buisness">Nun-ya-bees-wax</option>
+        </select></p>
+
+        <p><input type="submit"></p>
+        
     </body>
 </html>
