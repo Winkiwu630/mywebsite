@@ -59,7 +59,7 @@ body {
 			background: #d0d0d0;
 		}
 
-		.button-link {
+		 button-link {
 			text-decoration: none;
 			color: black;
 			background: #e0e0e0;
@@ -69,6 +69,6 @@ body {
 			font-weight: 500;
 		}
 
-		.button-link:hover {
+		 button-link:hover {
 			background: #d0d0d0;
 		}
