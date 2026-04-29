@@ -35,9 +35,6 @@ body {
 			color: white;
 		}
 
-			nav a.active:hover {
-				background: #3b3b3b;
-			}
 		  
 		  nav {
 			display: flex;
@@ -78,3 +75,7 @@ body {
 		 .button-link:hover {
 			background: #d0d0d0;
 		}
+
+			nav a.active:hover {
+				background: #3b3b3b;
+			}
