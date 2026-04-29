@@ -67,6 +67,8 @@ body {
 			padding: 8px 12px;
 			display: inline-block;
 			font-weight: 500;
+			margin-right: 10px;
+			margin-bottom: 10px
 		}
 
 		 .button-link:hover {
