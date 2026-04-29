@@ -48,3 +48,8 @@ body {
 			  text-decoration: none;
 			  color: black;
 		}
+
+		nav button.active {
+			background: #222;
+			color: white;
+		}
