@@ -31,6 +31,8 @@ body {
 		  nav a.active {
 			text-decoration: underline;
 			font-weight: bold;
+			background: #222;
+			color: white;
 		}
 		  
 		  nav {
@@ -47,9 +49,7 @@ body {
 		  nav a {
 			  text-decoration: none;
 			  color: black;
-		}
-
-		nav button.active {
-			background: #222;
-			color: white;
+			  background: transparent;
+			  border-radius: 6px;
+			  padding: 8px 12px;
 		}
