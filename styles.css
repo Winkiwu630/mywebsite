@@ -8,8 +8,7 @@ body {
 
 		main { 
 			max-width: 800px;
-			margin: 0 auto;
-			width: 100%;
+			margin: auto;
 		}
 
 		section {
@@ -24,7 +23,7 @@ body {
 
 		h1 {
 			background: #222;
-			color: lavender;
+			color: palegreen;
 			margin: 0;
 			padding: 20px;
 			text-align: center;
