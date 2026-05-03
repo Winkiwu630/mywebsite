@@ -8,6 +8,7 @@ body {
 		main { 
 			max-width: 800px;
 			margin: auto;
+			align-self: center;
 		}
 
 		section {
