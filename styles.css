@@ -1,3 +1,5 @@
+html { overflow-y: scroll; }
+
 body {
 			background-image: url("background.jpg");
 			font-family: Arial, sans-serif;
