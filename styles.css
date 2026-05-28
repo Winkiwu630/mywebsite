@@ -96,3 +96,25 @@ body {
 			resize: vertical;
 			box-sizing: border-box;
 		}
+
+		footer {
+			text-align: center;
+			padding: 28px 20px;
+			background-color: red;
+			color: #a0a0a0;
+			font-family: Arial, sans-serif;
+			font-size: 0.85rem;
+		}
+
+		.footer-links {
+			margin-top: 10px;
+			font-size: 0.82rem;
+		}
+
+		.footer-links a {
+			color: #90ee90;
+			text-decoration: none;
+			transition: color 0.2s;
+		}
+
+		.footer-links a:hover { color: #c8ffc8; }
