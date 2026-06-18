@@ -13,12 +13,13 @@
 
 <body>
 
-	<main>
+	<div class="hero">
+		<img src="headshot.jpg" alt="Wesley Elliott" class="hero-avatar">
+		<h1>TheCodingNewbie</h1>
+		<p class="tagline">Wesley Elliott <br> Aspiring Web Developer</p>
+	</div>
 
-		<div class="hero">
-			<h1>TheCodingNewbie</h1>
-			<p class="tagline">Wesley Elliott <br> Aspiring Web Developer</p>
-		</div>
+	<main>
 
 			<nav>
   				<a href="index.html">Home</a>
@@ -29,13 +30,13 @@
 
 
 		<section>
-			<h2>Jackson J Becker — Author Website <span style="font-size:0.75rem; background:#cce5ff; color:#004085; border-radius:4px; padding:2px 8px; margin-left:8px; font-weight:normal;">Complete</span></h2>
+			<h2>Jackson J Becker | Author Website <span style="font-size:0.75rem; background:#cce5ff; color:#004085; border-radius:4px; padding:2px 8px; margin-left:8px; font-weight:normal;">Complete</span></h2>
 			<p><strong>Stack:</strong> HTML &nbsp;·&nbsp; CSS &nbsp;·&nbsp; Vanilla JavaScript &nbsp;·&nbsp; GitHub Pages</p>
 			<p><em>Built with AI-assisted code review.</em></p>
 			<p>A multi-page author website built from scratch for my cousin, a published children's book author. Designed to be clean, professional, and easy to maintain without a CMS or framework.</p>
 			<ul>
 				<li>Multi-page site: Home, Books, Interests (dropdown), Contact</li>
-				<li>Responsive layout — stacks gracefully on mobile</li>
+				<li>Responsive layout that stacks gracefully on mobile</li>
 				<li>CSS + JavaScript dropdown nav with desktop hover and mobile tap support</li>
 				<li>Rotating quote banner with JS height-locking to prevent layout shift</li>
 				<li>Sticky header with scroll offset compensation for in-page anchor links</li>
@@ -45,12 +46,12 @@
 		</section>
 
 		<section>
-			<h2>thecodingnewbie.com — This Site <span style="font-size:0.75rem; background:#d4edda; color:#155724; border-radius:4px; padding:2px 8px; margin-left:8px; font-weight:normal;">Ongoing</span></h2>
+			<h2>thecodingnewbie.com | This Site <span style="font-size:0.75rem; background:#d4edda; color:#155724; border-radius:4px; padding:2px 8px; margin-left:8px; font-weight:normal;">Ongoing</span></h2>
 			<p><strong>Stack:</strong> HTML &nbsp;·&nbsp; CSS &nbsp;·&nbsp; GitHub Pages &nbsp;·&nbsp; Cloudflare DNS</p>
-			<p>My personal portfolio and learning log — the project that started everything. Built by hand from Notepad, no frameworks, no templates. Intentionally kept simple so every improvement reflects a skill genuinely learned.</p>
+			<p>My personal portfolio and learning log. The project that started everything. Built by hand from Notepad, no frameworks, no templates. Intentionally kept simple so every improvement reflects a skill genuinely learned.</p>
 			<ul>
 				<li>Custom domain via Cloudflare DNS pointing to GitHub Pages</li>
-				<li>Iteratively improved as new skills are picked up — the changelog tells the story</li>
+				<li>Iteratively improved as new skills are picked up. The changelog tells the story.</li>
 				<li>Starting point: raw HTML in Notepad. Current state: CSS layout, nav, forms, multi-page</li>
 			</ul>
 		</section>
@@ -58,26 +59,26 @@
 		<section>
 			<h2>Self-Hosted Homelab <span style="font-size:0.75rem; background:#d4edda; color:#155724; border-radius:4px; padding:2px 8px; margin-left:8px; font-weight:normal;">Active</span></h2>
 			<p><strong>Stack:</strong> Ubuntu Server &nbsp;·&nbsp; Docker &nbsp;·&nbsp; Podman &nbsp;·&nbsp; Cloudflare Tunnel &nbsp;·&nbsp; Cloudflare Zero Trust &nbsp;·&nbsp; systemd &nbsp;·&nbsp; Nginx &nbsp;·&nbsp; Tailscale</p>
-			<p>A production-grade home server running 10+ self-hosted services including a media stack, request management, and remote access infrastructure. Designed and maintained entirely from scratch — no pre-built NAS OS or turnkey solutions.</p>
+			<p>A production-grade home server running 10+ self-hosted services including a media stack, request management, and remote access infrastructure. Designed and maintained entirely from scratch. No pre-built NAS OS or turnkey solutions.</p>
 			<ul>
 				<li>Zero-exposure public access via Cloudflare Tunnel (no open ports)</li>
 				<li>Cloudflare Zero Trust policies restrict access to trusted users and devices</li>
 				<li>Mix of Docker Compose and rootless Podman + systemd services</li>
 				<li>Services include: Jellyfin, Audiobookshelf, Jellyseerr, qBittorrent, and more</li>
 				<li>Automated media pipeline: request → download → rename → library scan → notify</li>
-				<li>3-2-1 backup strategy for irreplaceable data — 3 copies, 2 locations, 1 offsite (Backblaze B2 via rclone)</li>
-				<li>Ongoing — regularly extended with new tooling and hardening</li>
+				<li>3-2-1 backup strategy for irreplaceable data: 3 copies, 2 locations, 1 offsite (Backblaze B2 via rclone)</li>
+				<li>Ongoing, regularly extended with new tooling and hardening</li>
 			</ul>
 		</section>
 
 		<section>
-			<h2>Guppi — AI Home Assistant <span style="font-size:0.75rem; background:#d4edda; color:#155724; border-radius:4px; padding:2px 8px; margin-left:8px; font-weight:normal;">Active</span></h2>
+			<h2>Guppi | AI Home Assistant <span style="font-size:0.75rem; background:#d4edda; color:#155724; border-radius:4px; padding:2px 8px; margin-left:8px; font-weight:normal;">Active</span></h2>
 			<p><strong>Stack:</strong> Python &nbsp;·&nbsp; Claude API (Anthropic) &nbsp;·&nbsp; Telegram Bot API &nbsp;·&nbsp; Podman &nbsp;·&nbsp; systemd &nbsp;·&nbsp; REST APIs &nbsp;·&nbsp; webhooks</p>
 			<p><em>Built with AI-assisted code review.</em></p>
-			<p>A personal AI assistant running as a containerized service on my homelab. Guppi monitors my self-hosted media stack and proactively notifies me through Telegram when services need attention — without me having to ask. It handles media requests, triggers library scans after file operations, and integrates with my Audiobookshelf and Jellyfin instances via their REST APIs.</p>
+			<p>A personal AI assistant running as a containerized service on my homelab. Guppi monitors my self-hosted media stack and proactively notifies me through Telegram when services need attention without me having to ask. It handles media requests, triggers library scans after file operations, and integrates with my Audiobookshelf and Jellyfin instances via their REST APIs.</p>
 			<ul>
 				<li>Integrates Claude API for natural-language interaction and reasoning</li>
-				<li>Webhook-driven event handling — responds to system events in real time</li>
+				<li>Webhook-driven event handling that responds to system events in real time</li>
 				<li>Runs as a Podman container managed by systemd for reliable, rootless operation</li>
 				<li>Handles cross-service orchestration (rename → scan → notify pipeline)</li>
 				<li>Proactive monitoring: detects and surfaces issues without polling from the user</li>
@@ -90,14 +91,21 @@
 		</section>
 
 		<section>
-			<h2>Astrophotography <span style="font-size:0.75rem; background:#fff3cd; color:#856404; border-radius:4px; padding:2px 8px; margin-left:8px; font-weight:normal;">Coming Soon</span></h2>
-			<p>A lifelong interest in the cosmos. Planning to document gear, techniques, and results here as I get set up.</p>
+			<h2>Astrophotography <span style="font-size:0.75rem; background:#d4edda; color:#155724; border-radius:4px; padding:2px 8px; margin-left:8px; font-weight:normal;">Active</span></h2>
+			<p><strong>Gear:</strong> Seestar S50 smart telescope</p>
+			<p>A lifelong interest in the cosmos. Shot from my backyard: nebulae, galaxies and the Moon.</p>
+			<div class="astro-teaser">
+				<img src="IC434-44min.jpg" alt="IC 434 Horsehead Nebula">
+				<img src="M42-107min.jpg" alt="M42 Orion Nebula">
+				<img src="Moon-closeup.jpg" alt="Moon closeup">
+			</div>
+			<a href="astro.html" class="button-link">View Full Gallery →</a>
 		</section>
 
 	</main>
 
   <footer>
-    <p>&copy; 2026 Wesley Elliott &mdash; thecodingnewbie.com</p>
+    <p>&copy; 2026 Wesley Elliott | thecodingnewbie.com</p>
     <p class="footer-links">
       <a href="mailto:thecodingnewbie94@gmail.com">thecodingnewbie94@gmail.com</a>
     </p>

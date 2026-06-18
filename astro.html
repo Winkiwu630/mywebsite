@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" href="styles.css">
+	<title>Astrophotography | TheCodingNewbie</title>
+</head>
+
+<body>
+
+	<div id="lightbox" class="lightbox" onclick="handleOverlayClick(event)">
+		<button class="lightbox-close" onclick="closeLightbox()">&times;</button>
+		<button class="lightbox-prev" onclick="navigate(-1)">&#8592;</button>
+		<div class="lightbox-content">
+			<img id="lightbox-img" class="lightbox-img" src="" alt="">
+			<div id="lightbox-caption" class="lightbox-caption"></div>
+		</div>
+		<button class="lightbox-next" onclick="navigate(1)">&#8594;</button>
+		<div class="lightbox-zoom-controls">
+			<button onclick="adjustZoom(-0.25)">−</button>
+			<button onclick="resetZoom()">Reset</button>
+			<button onclick="adjustZoom(0.25)">+</button>
+		</div>
+	</div>
+
+	<div class="hero">
+		<img src="headshot.jpg" alt="Wesley Elliott" class="hero-avatar">
+		<h1>TheCodingNewbie</h1>
+		<p class="tagline">Wesley Elliott <br> Aspiring Web Developer</p>
+	</div>
+
+	<main>
+
+		<nav>
+			<a href="index.html">Home</a>
+			<a href="projects.html" class="active">Projects</a>
+			<a href="changelog.html">Patch Notes</a>
+			<a href="forms.html">Contact</a>
+		</nav>
+
+		<section>
+			<h2>Astrophotography</h2>
+			<p>Shot with a Seestar S50 smart telescope. Each image shows the target object and total integration time. The longer the shoot, the more signal pulled from the sky.</p>
+
+			<div class="astro-grid">
+
+				<div class="astro-card" onclick="openLightbox(0)">
+					<img src="IC434-44min.jpg" alt="IC 434 Horsehead Nebula">
+					<div class="astro-caption">IC 434: Horsehead Nebula<br>44 min</div>
+				</div>
+
+				<div class="astro-card" onclick="openLightbox(1)">
+					<img src="M42-107min.jpg" alt="M42 Orion Nebula">
+					<div class="astro-caption">M42: Orion Nebula<br>107 min</div>
+				</div>
+
+				<div class="astro-card" onclick="openLightbox(2)">
+					<img src="M42-88min.jpg" alt="M42 Orion Nebula">
+					<div class="astro-caption">M42: Orion Nebula<br>88 min</div>
+				</div>
+
+				<div class="astro-card" onclick="openLightbox(3)">
+					<img src="M42-43min.jpg" alt="M42 Orion Nebula">
+					<div class="astro-caption">M42: Orion Nebula<br>43 min</div>
+				</div>
+
+				<div class="astro-card" onclick="openLightbox(4)">
+					<img src="M31-39min.jpg" alt="M31 Andromeda Galaxy">
+					<div class="astro-caption">M31: Andromeda Galaxy<br>39 min</div>
+				</div>
+
+				<div class="astro-card" onclick="openLightbox(5)">
+					<img src="M74-280min.jpg" alt="M74 Phantom Galaxy">
+					<div class="astro-caption">M74: Phantom Galaxy<br>280 min</div>
+				</div>
+
+				<div class="astro-card" onclick="openLightbox(6)">
+					<img src="M74-118min.jpg" alt="M74 Phantom Galaxy">
+					<div class="astro-caption">M74: Phantom Galaxy<br>118 min</div>
+				</div>
+
+				<div class="astro-card" onclick="openLightbox(7)">
+					<img src="M51-18min.jpg" alt="M51 Whirlpool Galaxy">
+					<div class="astro-caption">M51: Whirlpool Galaxy<br>18 min</div>
+				</div>
+
+				<div class="astro-card" onclick="openLightbox(8)">
+					<img src="M27-69min.jpg" alt="M27 Dumbbell Nebula">
+					<div class="astro-caption">M27: Dumbbell Nebula<br>69 min</div>
+				</div>
+
+				<div class="astro-card" onclick="openLightbox(9)">
+					<img src="M45-45min.jpg" alt="M45 Pleiades">
+					<div class="astro-caption">M45: Pleiades<br>45 min</div>
+				</div>
+
+				<div class="astro-card" onclick="openLightbox(10)">
+					<img src="NGC6993-34min.jpg" alt="NGC 6993">
+					<div class="astro-caption">NGC 6993<br>34 min</div>
+				</div>
+
+				<div class="astro-card" onclick="openLightbox(11)">
+					<img src="Moon-closeup.jpg" alt="Moon closeup">
+					<div class="astro-caption">Moon: Closeup</div>
+				</div>
+
+				<div class="astro-card" onclick="openLightbox(12)">
+					<img src="Moon-farshot.jpg" alt="Moon far shot">
+					<div class="astro-caption">Moon: Wide Shot</div>
+				</div>
+
+			</div>
+		</section>
+
+	</main>
+
+	<footer>
+		<p>&copy; 2026 Wesley Elliott | thecodingnewbie.com</p>
+		<p class="footer-links">
+			<a href="mailto:thecodingnewbie94@gmail.com">thecodingnewbie94@gmail.com</a>
+		</p>
+	</footer>
+
+	<script>
+		const images = [
+			{ src: 'IC434-44min.jpg',  caption: 'IC 434: Horsehead Nebula · 44 min' },
+			{ src: 'M42-107min.jpg',   caption: 'M42: Orion Nebula · 107 min' },
+			{ src: 'M42-88min.jpg',    caption: 'M42: Orion Nebula · 88 min' },
+			{ src: 'M42-43min.jpg',    caption: 'M42: Orion Nebula · 43 min' },
+			{ src: 'M31-39min.jpg',    caption: 'M31: Andromeda Galaxy · 39 min' },
+			{ src: 'M74-280min.jpg',   caption: 'M74: Phantom Galaxy · 280 min' },
+			{ src: 'M74-118min.jpg',   caption: 'M74: Phantom Galaxy · 118 min' },
+			{ src: 'M51-18min.jpg',    caption: 'M51: Whirlpool Galaxy · 18 min' },
+			{ src: 'M27-69min.jpg',    caption: 'M27: Dumbbell Nebula · 69 min' },
+			{ src: 'M45-45min.jpg',    caption: 'M45: Pleiades · 45 min' },
+			{ src: 'NGC6993-34min.jpg',caption: 'NGC 6993 · 34 min' },
+			{ src: 'Moon-closeup.jpg', caption: 'Moon: Closeup' },
+			{ src: 'Moon-farshot.jpg', caption: 'Moon: Wide Shot' },
+		];
+
+		let current = 0;
+		let scale = 1;
+		let offsetX = 0, offsetY = 0;
+		let isDragging = false;
+		let dragStartX, dragStartY;
+
+		const lb    = document.getElementById('lightbox');
+		const lbImg = document.getElementById('lightbox-img');
+
+		function applyTransform() {
+			lbImg.style.transform = `translate(${offsetX}px, ${offsetY}px) scale(${scale})`;
+		}
+
+		function updateCursor() {
+			if (isDragging) lbImg.style.cursor = 'grabbing';
+			else lbImg.style.cursor = scale > 1 ? 'grab' : 'default';
+		}
+
+		function adjustZoom(delta) {
+			scale = Math.min(4, Math.max(0.5, scale + delta));
+			applyTransform();
+			updateCursor();
+		}
+
+		function resetZoom() {
+			scale = 1; offsetX = 0; offsetY = 0;
+			applyTransform();
+			updateCursor();
+		}
+
+		function openLightbox(index) {
+			current = index;
+			resetZoom();
+			lbImg.src = images[current].src;
+			document.getElementById('lightbox-caption').textContent = images[current].caption;
+			lb.classList.add('active');
+		}
+
+		function closeLightbox() {
+			resetZoom();
+			lb.classList.remove('active');
+		}
+
+		function navigate(dir) {
+			current = (current + dir + images.length) % images.length;
+			resetZoom();
+			lbImg.src = images[current].src;
+			document.getElementById('lightbox-caption').textContent = images[current].caption;
+		}
+
+		function handleOverlayClick(e) {
+			if (e.target === lb) closeLightbox();
+		}
+
+		// Drag to pan
+		lbImg.addEventListener('mousedown', (e) => {
+			if (scale <= 1) return;
+			isDragging = true;
+			dragStartX = e.clientX - offsetX;
+			dragStartY = e.clientY - offsetY;
+			updateCursor();
+			e.preventDefault();
+		});
+
+		document.addEventListener('mousemove', (e) => {
+			if (!isDragging) return;
+			offsetX = e.clientX - dragStartX;
+			offsetY = e.clientY - dragStartY;
+			applyTransform();
+		});
+
+		document.addEventListener('mouseup', () => {
+			if (isDragging) {
+				isDragging = false;
+				updateCursor();
+			}
+		});
+
+		// Scroll to zoom
+		lb.addEventListener('wheel', (e) => {
+			if (!lb.classList.contains('active')) return;
+			e.preventDefault();
+			adjustZoom(e.deltaY > 0 ? -0.15 : 0.15);
+		}, { passive: false });
+
+		// Keyboard
+		document.addEventListener('keydown', (e) => {
+			if (!lb.classList.contains('active')) return;
+			if (e.key === 'ArrowLeft')  navigate(-1);
+			if (e.key === 'ArrowRight') navigate(1);
+			if (e.key === 'Escape')     closeLightbox();
+		});
+	</script>
+
+</body>
+</html>
