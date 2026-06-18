@@ -35,13 +35,24 @@ section {
 				0 12px 24px rgba(0,0,0,0.15);
 }
 
-h1 {
+.hero {
 	background: #222;
-	color: red;
-	margin: 0;
-	padding: 20px;
 	text-align: center;
+	padding: 28px 20px 16px;
 	box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
+h1 {
+	color: white;
+	margin: 0 0 6px 0;
+	font-size: 2rem;
+}
+
+.tagline {
+	color: #a0a0a0;
+	font-size: 0.95rem;
+	font-style: italic;
+	margin: 0;
 }
 
 nav {
