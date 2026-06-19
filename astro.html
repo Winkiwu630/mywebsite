@@ -35,7 +35,13 @@
 
 		<nav>
 			<a href="index.html">Home</a>
-			<a href="projects.html" class="active">Projects</a>
+			<div class="nav-dropdown">
+				<a href="projects.html" class="nav-drop-toggle active">Projects &#9662;</a>
+				<div class="nav-drop-menu">
+					<a href="websites.html">Websites</a>
+					<a href="astro.html" class="active">Astrophotography</a>
+				</div>
+			</div>
 			<a href="changelog.html">Patch Notes</a>
 			<a href="forms.html">Contact</a>
 		</nav>
@@ -234,5 +240,18 @@
 		});
 	</script>
 
+
+	<script>
+		document.querySelectorAll('.nav-drop-toggle').forEach(function(t) {
+			t.addEventListener('click', function(e) {
+				var dd = t.closest('.nav-dropdown');
+				dd.classList.toggle('open');
+				e.stopPropagation();
+			});
+		});
+		document.addEventListener('click', function() {
+			document.querySelectorAll('.nav-dropdown').forEach(function(d) { d.classList.remove('open'); });
+		});
+	</script>
 </body>
 </html>

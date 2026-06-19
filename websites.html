@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta name="description" content="Website portfolio - TheCodingNewbie. Three tiers of hand-built websites with plain-English breakdowns to help you figure out what you actually need.">
+	<link rel="stylesheet" href="styles.css">
+	<title>Website Projects | TheCodingNewbie</title>
+</head>
+
+<body>
+
+	<div class="hero">
+		<img src="headshot.jpg" alt="Wesley Elliott" class="hero-avatar">
+		<h1>TheCodingNewbie</h1>
+		<p class="tagline">Wesley Elliott <br> Aspiring Web Developer</p>
+	</div>
+
+	<main>
+
+		<nav>
+			<a href="index.html">Home</a>
+			<div class="nav-dropdown">
+				<a href="projects.html" class="nav-drop-toggle active">Projects &#9662;</a>
+				<div class="nav-drop-menu">
+					<a href="websites.html" class="active">Websites</a>
+					<a href="astro.html">Astrophotography</a>
+				</div>
+			</div>
+			<a href="changelog.html">Patch Notes</a>
+			<a href="forms.html">Contact</a>
+		</nav>
+
+		<section>
+			<h2>Website Projects</h2>
+			<p>These are three real websites built from scratch. No page builders, drag-and-drop tools, templates, and most importantly no monthly subscriptions. Each one shows a different level of web project, at a different price point, with different capabilities.</p>
+			<p>Browse through them and see which one sounds like what you have in mind. The descriptions below each site are written in plain English. No tech jargon. The goal is for you to be able to look at these and say "yeah, that's what I need" or "no, I need more than that" before you ever reach out.</p>
+			<p>If you're still not sure, <a href="forms.html">get in touch</a> and we'll figure it out.</p>
+		</section>
+
+		<!-- ===== TIER 1: ONE-PAGER ===== -->
+		<section>
+			<span class="tier-badge one-page">One-Page Site &nbsp;|&nbsp; Starting at $600</span>
+			<h2>Homefront Repair Co. &nbsp;<span style="font-size:0.75rem; background:#e2e3e5; color:#383d41; border-radius:4px; padding:2px 8px; margin-left:4px; font-weight:normal;">Demo</span></h2>
+			<p><strong>Stack:</strong> HTML &nbsp;&middot;&nbsp; CSS &nbsp;&middot;&nbsp; Vanilla JavaScript</p>
+
+			<div class="site-preview">
+				<div class="preview-bar">
+					<span class="preview-dot"></span>
+					<span class="preview-dot"></span>
+					<span class="preview-dot"></span>
+					<span class="preview-url">winkiwu630.github.io/mock-handman-one-pager</span>
+				</div>
+				<div class="preview-img"><img src="HandymanWebsite.jpg" alt="Homefront Repair Co. screenshot"></div>
+			</div>
+
+			<p><strong>Good for you if...</strong> your goal is simple: people find you, see what you do, and get in touch. One page, anchor scroll navigation, a contact form - done. No appointment calendar, no product catalog, no logins. This is the professional online equivalent of a business card, except it works 24/7 and shows up on Google.</p>
+
+			<p><strong>Best for:</strong> freelancers, tradespeople, local service businesses, real estate agents, anyone testing an idea before committing to more.</p>
+
+			<ul>
+				<li>Single scrollable page with anchor navigation (Services, About, Contact)</li>
+				<li>Contact form that sends directly to your email, no database needed</li>
+				<li>Works on phones, tablets, and desktops</li>
+				<li>Nothing to maintain after launch, no platform to log into, no monthly fees</li>
+				<li>Your only ongoing cost: a domain name (~$15/year)</li>
+			</ul>
+
+			<a href="https://winkiwu630.github.io/mock-handman-one-pager/" class="button-link" target="_blank" rel="noopener">View Demo Site &rarr;</a>
+		</section>
+
+		<!-- ===== TIER 2: MULTI-PAGE NO BACKEND ===== -->
+		<section>
+			<span class="tier-badge multi-page">Multi-Page Site &nbsp;|&nbsp; Starting at $1,200</span>
+			<h2>Jackson J. Becker | Author Website &nbsp;<span style="font-size:0.75rem; background:#cce5ff; color:#004085; border-radius:4px; padding:2px 8px; margin-left:4px; font-weight:normal;">Live</span></h2>
+			<p><strong>Stack:</strong> HTML &nbsp;&middot;&nbsp; CSS &nbsp;&middot;&nbsp; Vanilla JavaScript &nbsp;&middot;&nbsp; GitHub Pages</p>
+
+			<div class="site-preview">
+				<div class="preview-bar">
+					<span class="preview-dot"></span>
+					<span class="preview-dot"></span>
+					<span class="preview-dot"></span>
+					<span class="preview-url">jacksonjbecker.com</span>
+				</div>
+				<div class="preview-img"><img src="JacksonWebsite.jpg" alt="Jackson J. Becker website screenshot"></div>
+			</div>
+
+			<p><strong>Good for you if...</strong> one page isn't enough but you don't need customers to create accounts or submit data you need to store somewhere. Think several different pages with real navigation, a home page, a services page, an about page, a contact page. Real structure, real depth, but no server or database behind it. A contact form still works, it just emails you instead of logging submissions to a spreadsheet.</p>
+
+			<p><strong>Best for:</strong> authors, photographers, artists, small businesses, professionals who need a clean online presence with more than one page worth of content.</p>
+
+			<ul>
+				<li>Multiple pages with full navigation (including mobile hamburger menu)</li>
+				<li>Contact form that emails you directly</li>
+				<li>Responsive layout that works on any device</li>
+				<li>Custom domain support (jacksonjbecker.com, not wesleyscousin.github.io)</li>
+				<li>Can be hosted for free on GitHub Pages, no monthly hosting bill</li>
+				<li>No logins, no CMS, no subscription platform</li>
+			</ul>
+
+			<a href="https://jacksonjbecker.com" class="button-link" target="_blank" rel="noopener">View Live Site &rarr;</a>
+		</section>
+
+		<!-- ===== TIER 3: FULL FRONTEND ===== -->
+		<section>
+			<span class="tier-badge full-app">Full Web Application &nbsp;|&nbsp; Starting at $2,500</span>
+			<h2>C&amp;C by Jordan &amp; Aurora | Mock Salon &nbsp;<span style="font-size:0.75rem; background:#fff3cd; color:#856404; border-radius:4px; padding:2px 8px; margin-left:4px; font-weight:normal;">Demo</span></h2>
+			<p><strong>Stack:</strong> HTML &nbsp;&middot;&nbsp; CSS &nbsp;&middot;&nbsp; Vanilla JavaScript &nbsp;&middot;&nbsp; GitHub Pages</p>
+
+			<div class="site-preview">
+				<div class="preview-bar">
+					<span class="preview-dot"></span>
+					<span class="preview-dot"></span>
+					<span class="preview-dot"></span>
+					<span class="preview-url">winkiwu630.github.io/mock-salon</span>
+				</div>
+				<div class="preview-img"><img src="C&amp;CWebsite.jpg" alt="C&amp;C by Jordan &amp; Aurora screenshot"></div>
+			</div>
+
+			<p><strong>Good for you if...</strong> your customers need to actually do something on your site, not just read it. Book an appointment, check a calendar, browse services, fill out a multi-step form. This is where web development gets complex - there's real JavaScript logic running underneath everything you see. The demo here handles everything in the browser. A real working version of this would need a backend (a server and database) to actually save bookings and send confirmation emails - that's included in the price range.</p>
+
+			<p><strong>Best for:</strong> salons, restaurants, service businesses that take appointments, contractors, anyone who needs their customers to be able to interact with the site rather than just look at it.</p>
+
+			<ul>
+				<li>5 pages: Home, Services, Booking flow, Calendar, Gallery</li>
+				<li>Flip-card service browser with deep links directly into the booking flow</li>
+				<li>5-step booking flow with JavaScript state management and form validation</li>
+				<li>Interactive monthly calendar with stylist filtering and a day detail modal</li>
+				<li>Scroll-triggered animations, animated stat counters, auto-scrolling photo strip</li>
+				<li>Fully mobile-optimized throughout</li>
+				<li>A real production version would add a backend to store bookings and send emails</li>
+			</ul>
+
+			<a href="https://winkiwu630.github.io/mock-salon/" class="button-link" target="_blank" rel="noopener noreferrer">View Demo Site &rarr;</a>
+		</section>
+
+	</main>
+
+	<footer>
+		<p>&copy; 2026 Wesley Elliott | thecodingnewbie.com</p>
+		<p class="footer-links">
+			<a href="mailto:thecodingnewbie94@gmail.com">thecodingnewbie94@gmail.com</a>
+		</p>
+	</footer>
+
+	<script>
+		document.querySelectorAll('.nav-drop-toggle').forEach(function(t) {
+			t.addEventListener('click', function(e) {
+				var dd = t.closest('.nav-dropdown');
+				dd.classList.toggle('open');
+				e.stopPropagation();
+			});
+		});
+		document.addEventListener('click', function() {
+			document.querySelectorAll('.nav-dropdown').forEach(function(d) { d.classList.remove('open'); });
+		});
+	</script>
+
+</body>
+
+</html>

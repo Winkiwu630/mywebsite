@@ -22,11 +22,17 @@
 	  <main>
 
       <nav>
-  		<a href="index.html">Home</a>
- 		<a href="projects.html">Projects</a>
-  		<a href="changelog.html" class="active">Patch Notes</a>
-		<a href="forms.html">Contact</a>
-	  </nav>
+			<a href="index.html">Home</a>
+			<div class="nav-dropdown">
+				<a href="projects.html" class="nav-drop-toggle">Projects &#9662;</a>
+				<div class="nav-drop-menu">
+					<a href="websites.html">Websites</a>
+					<a href="astro.html">Astrophotography</a>
+				</div>
+			</div>
+			<a href="changelog.html" class="active">Patch Notes</a>
+			<a href="forms.html">Contact</a>
+		</nav>
 		  
 		  <section>
 		  <p>This page is here to help you, dear site viewer, see the changes that have been made over time. While this log does not note every change made 
@@ -221,6 +227,19 @@
       <a href="mailto:thecodingnewbie94@gmail.com">thecodingnewbie94@gmail.com</a>
     </p>
   </footer>
+
+	<script>
+		document.querySelectorAll('.nav-drop-toggle').forEach(function(t) {
+			t.addEventListener('click', function(e) {
+				var dd = t.closest('.nav-dropdown');
+				dd.classList.toggle('open');
+				e.stopPropagation();
+			});
+		});
+		document.addEventListener('click', function() {
+			document.querySelectorAll('.nav-dropdown').forEach(function(d) { d.classList.remove('open'); });
+		});
+	</script>
 </body>
 
   </html>
