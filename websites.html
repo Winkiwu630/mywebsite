@@ -21,7 +21,7 @@
 <body>
 
 	<div class="hero">
-		<img src="headshot.jpg" alt="Wesley Elliott" class="hero-avatar">
+		<img src="images/headshot.jpg" alt="Wesley Elliott" class="hero-avatar">
 		<h1>TheCodingNewbie</h1>
 		<p class="tagline">Wesley Elliott <br> Aspiring Web Developer</p>
 	</div>
@@ -61,7 +61,7 @@
 					<span class="preview-dot"></span>
 					<span class="preview-url">homefrontrepair.com</span>
 				</div>
-				<div class="preview-img"><img src="HandymanWebsite.jpg" alt="Homefront Repair Co. screenshot"></div>
+				<div class="preview-img"><img src="images/HandymanWebsite.jpg" alt="Homefront Repair Co. screenshot"></div>
 			</div>
 
 			<p><strong>Good for you if...</strong> your goal is simple: people find you, see what you do, and get in touch. One page, anchor scroll navigation, a contact form - done. No appointment calendar, no product catalog, no logins. This is the professional online equivalent of a business card, except it works 24/7 and shows up on Google.</p>
@@ -92,7 +92,7 @@
 					<span class="preview-dot"></span>
 					<span class="preview-url">jacksonjbecker.com</span>
 				</div>
-				<div class="preview-img"><img src="JacksonWebsite.jpg" alt="Jackson J. Becker website screenshot"></div>
+				<div class="preview-img"><img src="images/JacksonWebsite.jpg" alt="Jackson J. Becker website screenshot"></div>
 			</div>
 
 			<p><strong>Good for you if...</strong> one page isn't enough but you don't need customers to create accounts or submit data you need to store somewhere. Think several different pages with real navigation, a home page, a services page, an about page, a contact page. Real structure, real depth, but no server or database behind it. A contact form still works, it just emails you instead of logging submissions to a spreadsheet.</p>
@@ -157,7 +157,11 @@
 		document.querySelectorAll('.nav-drop-toggle').forEach(function(t) {
 			t.addEventListener('click', function(e) {
 				var dd = t.closest('.nav-dropdown');
-				dd.classList.toggle('open');
+				if (dd.classList.contains('open')) {
+					return;
+				}
+				dd.classList.add('open');
+				e.preventDefault();
 				e.stopPropagation();
 			});
 		});

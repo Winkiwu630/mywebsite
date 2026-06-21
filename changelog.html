@@ -23,7 +23,7 @@
   <body>
 
 	<div class="hero">
-		<img src="headshot.jpg" alt="Wesley Elliott" class="hero-avatar">
+		<img src="images/headshot.jpg" alt="Wesley Elliott" class="hero-avatar">
 		<h1>TheCodingNewbie</h1>
 		<p class="tagline">Wesley Elliott <br> Aspiring Web Developer</p>
 	</div>
@@ -241,7 +241,11 @@
 		document.querySelectorAll('.nav-drop-toggle').forEach(function(t) {
 			t.addEventListener('click', function(e) {
 				var dd = t.closest('.nav-dropdown');
-				dd.classList.toggle('open');
+				if (dd.classList.contains('open')) {
+					return;
+				}
+				dd.classList.add('open');
+				e.preventDefault();
 				e.stopPropagation();
 			});
 		});

@@ -23,7 +23,7 @@
 <body>
 
 	<div class="hero">
-		<img src="headshot.jpg" alt="Wesley Elliott" class="hero-avatar">
+		<img src="images/headshot.jpg" alt="Wesley Elliott" class="hero-avatar">
 		<h1>TheCodingNewbie</h1>
 		<p class="tagline">Wesley Elliott <br> Aspiring Web Developer</p>
 	</div>
@@ -101,9 +101,9 @@
 			<p><strong>Gear:</strong> Seestar S50 smart telescope</p>
 			<p>A lifelong interest in the cosmos. Shot from my backyard: nebulae, galaxies and the Moon.</p>
 			<div class="astro-teaser">
-				<img src="IC434-44min.jpg" alt="IC 434 Horsehead Nebula">
-				<img src="M42-107min.jpg" alt="M42 Orion Nebula">
-				<img src="Moon-closeup.jpg" alt="Moon closeup">
+				<img src="images/IC434-44min.jpg" alt="IC 434 Horsehead Nebula">
+				<img src="images/M42-107min.jpg" alt="M42 Orion Nebula">
+				<img src="images/Moon-closeup.jpg" alt="Moon closeup">
 			</div>
 			<a href="astro.html" class="button-link">View Full Gallery →</a>
 		</section>
@@ -121,7 +121,11 @@
 		document.querySelectorAll('.nav-drop-toggle').forEach(function(t) {
 			t.addEventListener('click', function(e) {
 				var dd = t.closest('.nav-dropdown');
-				dd.classList.toggle('open');
+				if (dd.classList.contains('open')) {
+					return;
+				}
+				dd.classList.add('open');
+				e.preventDefault();
 				e.stopPropagation();
 			});
 		});

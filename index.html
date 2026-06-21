@@ -21,7 +21,7 @@
 <body>
 
 	<div class="hero">
-		<img src="headshot.jpg" alt="Wesley Elliott" class="hero-avatar">
+		<img src="images/headshot.jpg" alt="Wesley Elliott" class="hero-avatar">
 		<h1>TheCodingNewbie</h1>
 		<p class="tagline">Wesley Elliott <br> Aspiring Web Developer</p>
 	</div>
@@ -76,8 +76,8 @@
 
 		<section>
 			<h2>Who Am I?</h2>
-			<img src="baby-goat.jpg" alt="Wesley holding a baby goat" class="section-photo">
-			<img src="swing.jpg" alt="Wesley and Rorie on a swing" class="section-photo section-photo-left">
+			<img src="images/baby-goat.jpg" alt="Wesley holding a baby goat" class="section-photo">
+			<img src="images/swing.jpg" alt="Wesley and Rorie on a swing" class="section-photo section-photo-left">
 			<p>Hi I'm Wes or Wesley, it really doesn't matter what you call me. Dad, husband, gamer, lifelong learner, and notorious hobby hopper. 
 				I've tried learning to code a handful of times before and it never really stuck. This time something clicked, and I've been building ever since.</p>
 			<p>My wife says I'm a know-it-all because I've always got a fun fact ready. She's not wrong.</p>
@@ -98,7 +98,11 @@
 		document.querySelectorAll('.nav-drop-toggle').forEach(function(t) {
 			t.addEventListener('click', function(e) {
 				var dd = t.closest('.nav-dropdown');
-				dd.classList.toggle('open');
+				if (dd.classList.contains('open')) {
+					return;
+				}
+				dd.classList.add('open');
+				e.preventDefault();
 				e.stopPropagation();
 			});
 		});
