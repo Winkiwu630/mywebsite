@@ -84,6 +84,7 @@
 	<script>
 		document.querySelectorAll('.nav-drop-toggle').forEach(function(t) {
 			t.addEventListener('click', function(e) {
+			if (window.matchMedia('(hover: hover)').matches) return;
 				var dd = t.closest('.nav-dropdown');
 				if (dd.classList.contains('open')) {
 					return;
