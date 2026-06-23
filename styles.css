@@ -167,6 +167,20 @@ footer {
 
 .footer-links a:hover { color: #c8ffc8; }
 
+.footer-credit {
+	margin-top: 10px;
+	font-size: 0.78rem;
+	color: #666;
+}
+
+.footer-credit a {
+	color: #90ee90;
+	text-decoration: none;
+	transition: color 0.2s;
+}
+
+.footer-credit a:hover { color: #c8ffc8; }
+
 /* ── LIGHTBOX ── */
 .lightbox {
 	display: none;
@@ -337,10 +351,18 @@ footer {
   min-width: 180px;
   z-index: 200;
   padding: 4px;
-  padding-top: 10px;
   flex-direction: column;
   gap: 2px;
   border: 1px solid #ccc;
+}
+
+.nav-drop-menu::before {
+  content: '';
+  position: absolute;
+  top: -10px;
+  left: 0;
+  right: 0;
+  height: 10px;
 }
 
 .nav-dropdown:hover .nav-drop-menu,
@@ -382,6 +404,42 @@ footer {
 .tier-badge.one-page { background: #d4edda; color: #155724; }
 .tier-badge.multi-page { background: #cce5ff; color: #004085; }
 .tier-badge.full-app { background: #fff3cd; color: #856404; }
+.tier-badge.e-commerce { background: #f3e8ff; color: #5b21b6; }
+.tier-badge.migration { background: #fce7f3; color: #831843; }
+
+.addons-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 12px;
+  margin-top: 16px;
+}
+
+.addon-card {
+  background: #f9f9f9;
+  border: 1px solid #e0e0e0;
+  border-radius: 6px;
+  padding: 14px 16px;
+}
+
+.addon-card strong {
+  display: block;
+  font-size: 0.95rem;
+  margin-bottom: 2px;
+}
+
+.addon-price {
+  display: block;
+  font-size: 0.82rem;
+  font-weight: bold;
+  color: #444;
+  margin-bottom: 6px;
+}
+
+.addon-card p {
+  font-size: 0.88rem;
+  color: #555;
+  margin: 0;
+}
 
 .site-preview {
   border-radius: 8px;
@@ -478,6 +536,10 @@ footer {
 		display: block;
 		text-align: center;
 		margin-right: 0;
+	}
+
+	.addons-grid {
+		grid-template-columns: 1fr;
 	}
 
 	footer {
