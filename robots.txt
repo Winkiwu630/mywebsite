@@ -1,0 +1,6 @@
+User-agent: *
+Disallow: /links.html
+Disallow: /flyingmoss.html
+Allow: /
+
+Sitemap: https://thecodingnewbie.com/sitemap.xml
