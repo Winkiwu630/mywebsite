@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta name="description" content="Play Zork I live on an AWS EC2 instance. A hands-on AWS portfolio project by Wesley Elliott.">
+	<link rel="canonical" href="https://thecodingnewbie.com/zork.html">
+	<meta property="og:title" content="Zork on AWS EC2 | TheCodingNewbie">
+	<meta property="og:description" content="Play Zork I live on an AWS EC2 instance. A hands-on AWS portfolio project by Wesley Elliott.">
+	<meta property="og:type" content="website">
+	<meta property="og:url" content="https://thecodingnewbie.com/zork.html">
+	<meta property="og:image" content="https://thecodingnewbie.com/images/headshot.jpg">
+	<link rel="stylesheet" href="styles.css">
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/xterm@5.3.0/css/xterm.css">
+	<title>Zork on AWS EC2 | TheCodingNewbie</title>
+	<style>
+		.terminal-wrap {
+			background: #111;
+			border-radius: 8px;
+			padding: 12px;
+			margin-top: 16px;
+			overflow: hidden;
+		}
+		.terminal-bar {
+			display: flex;
+			align-items: center;
+			gap: 6px;
+			margin-bottom: 10px;
+		}
+		.terminal-dot {
+			width: 11px;
+			height: 11px;
+			border-radius: 50%;
+		}
+		.terminal-dot:nth-child(1) { background: #ff6057; }
+		.terminal-dot:nth-child(2) { background: #ffbd2e; }
+		.terminal-dot:nth-child(3) { background: #28c840; }
+		.terminal-label {
+			color: #666;
+			font-size: 0.78rem;
+			font-family: monospace;
+			margin-left: 6px;
+		}
+		#terminal {
+			width: 100%;
+		}
+		.status-dot {
+			display: inline-block;
+			width: 8px;
+			height: 8px;
+			border-radius: 50%;
+			background: #aaa;
+			margin-right: 6px;
+			vertical-align: middle;
+		}
+		.status-dot.connected { background: #28c840; }
+		.status-dot.error { background: #ff6057; }
+		#connection-status {
+			font-size: 0.82rem;
+			color: #666;
+			margin-top: 8px;
+		}
+		.stack-grid {
+			display: grid;
+			grid-template-columns: repeat(2, 1fr);
+			gap: 10px;
+			margin-top: 12px;
+		}
+		.stack-item {
+			background: #f9f9f9;
+			border: 1px solid #e0e0e0;
+			border-radius: 6px;
+			padding: 10px 14px;
+			font-size: 0.88rem;
+		}
+		.stack-item strong {
+			display: block;
+			font-size: 0.8rem;
+			color: #5a8a3c;
+			margin-bottom: 2px;
+			text-transform: uppercase;
+			letter-spacing: 0.04em;
+		}
+		@media (max-width: 600px) {
+			.stack-grid { grid-template-columns: 1fr; }
+		}
+	</style>
+<!-- Google tag (gtag.js) -->
+	<script async src="https://www.googletagmanager.com/gtag/js?id=G-GK5GVEC75L"></script>
+	<script>
+	  window.dataLayer = window.dataLayer || [];
+	  function gtag(){dataLayer.push(arguments);}
+	  gtag('js', new Date());
+	  gtag('config', 'G-GK5GVEC75L');
+	</script>
+</head>
+
+<body>
+
+	<div class="hero">
+		<img src="images/headshot.jpg" alt="Wesley Elliott" class="hero-avatar">
+		<h1>TheCodingNewbie</h1>
+		<p class="tagline">Wesley Elliott <br> Dev in Progress | Web &amp; Cloud</p>
+	</div>
+
+	<main>
+
+		<nav>
+			<a href="index.html">Home</a>
+			<div class="nav-dropdown">
+				<a href="projects.html" class="nav-drop-toggle active">Projects &#9662;</a>
+				<div class="nav-drop-menu">
+					<a href="websites.html">Websites</a>
+					<a href="astro.html">Astrophotography</a>
+					<a href="zork.html" class="active">Zork on EC2</a>
+				</div>
+			</div>
+			<a href="changelog.html">Patch Notes</a>
+			<a href="forms.html">Contact</a>
+		</nav>
+
+		<section>
+			<h2>Zork I on AWS EC2 <span style="font-size:0.75rem; background:#d4edda; color:#155724; border-radius:4px; padding:2px 8px; margin-left:8px; font-weight:normal;">Live</span></h2>
+			<p><strong>Stack:</strong> AWS EC2 &nbsp;·&nbsp; AWS S3 &nbsp;·&nbsp; IAM Roles &nbsp;·&nbsp; CloudWatch &nbsp;·&nbsp; Python &nbsp;·&nbsp; Flask &nbsp;·&nbsp; WebSocket &nbsp;·&nbsp; dfrotz</p>
+			<p>The terminal below is running live on an AWS EC2 instance. When you type a command and hit Enter, it gets sent over a WebSocket connection to a Python server on that instance, which passes it to a Z-machine interpreter running Zork I. The game file lives in an S3 bucket and is pulled down at server startup using the EC2's IAM role.</p>
+			<p>The point wasn't just to play Zork. It was to have something real running on AWS that I could point to and explain. Certificates tell you someone sat through a course. This is what actually sticking around long enough to make something work looks like.</p>
+
+			<div class="stack-grid">
+				<div class="stack-item">
+					<strong>EC2</strong>
+					Amazon Linux 2023 instance running the Flask WebSocket server and dfrotz interpreter.
+				</div>
+				<div class="stack-item">
+					<strong>S3</strong>
+					Game file (zork1.z5) stored in a private S3 bucket, pulled to the instance at startup.
+				</div>
+				<div class="stack-item">
+					<strong>IAM</strong>
+					EC2 instance role grants read access to S3. No credentials in code.
+				</div>
+				<div class="stack-item">
+					<strong>CloudWatch</strong>
+					CPU and memory monitoring with SNS alerts if the instance gets hammered.
+				</div>
+			</div>
+		</section>
+
+		<section>
+			<h2>Play Zork I</h2>
+			<p>Type commands and press Enter. Each session starts a fresh game. Classic text adventure from Infocom, 1980. If you've never played: i'd suggest looking in the mailbox.</p>
+
+			<div class="terminal-wrap">
+				<div class="terminal-bar">
+					<span class="terminal-dot"></span>
+					<span class="terminal-dot"></span>
+					<span class="terminal-dot"></span>
+					<span class="terminal-label">zork.thecodingnewbie.com/dfrotz</span>
+				</div>
+				<div id="terminal"></div>
+			</div>
+			<p id="connection-status"><span class="status-dot" id="status-dot"></span><span id="status-text">Connecting...</span></p>
+		</section>
+
+	</main>
+
+	<footer>
+		<p>&copy; 2026 Wesley Elliott | thecodingnewbie.com</p>
+		<p class="footer-links">
+			<a href="mailto:thecodingnewbie94@gmail.com">thecodingnewbie94@gmail.com</a>
+		</p>
+		<p class="footer-credit">Designed by <a href="index.html">TheCodingNewbie</a></p>
+	</footer>
+
+	<script src="https://cdn.jsdelivr.net/npm/xterm@5.3.0/lib/xterm.js"></script>
+	<script>
+		const term = new Terminal({
+			theme: {
+				background: '#111111',
+				foreground: '#c8ffc8',
+				cursor: '#28c840'
+			},
+			cursorBlink: true,
+			fontFamily: '"Courier New", Courier, monospace',
+			fontSize: 14,
+			lineHeight: 1.3,
+			cols: 80,
+			rows: 24,
+			scrollback: 500
+		});
+
+		term.open(document.getElementById('terminal'));
+
+		const statusDot = document.getElementById('status-dot');
+		const statusText = document.getElementById('status-text');
+
+		function setStatus(state, text) {
+			statusDot.className = 'status-dot' + (state ? ' ' + state : '');
+			statusText.textContent = text;
+		}
+
+		const ws = new WebSocket('ws://18.225.183.180:5000/zork');
+		let inputBuffer = '';
+
+		ws.onopen = () => {
+			setStatus('connected', 'Connected to EC2');
+		};
+
+		ws.onmessage = e => {
+			term.write(e.data.replace(/\n/g, '\r\n'));
+		};
+
+		ws.onclose = () => {
+			setStatus('error', 'Disconnected');
+			term.write('\r\n\r\n[Session ended]\r\n');
+		};
+
+		ws.onerror = () => {
+			setStatus('error', 'Could not connect to server');
+			term.write('[Connection failed - the server may be offline]\r\n');
+		};
+
+		term.onKey(({ key, domEvent }) => {
+			const code = domEvent.keyCode;
+			if (code === 13) {
+				ws.send(inputBuffer);
+				term.write('\r\n');
+				inputBuffer = '';
+			} else if (code === 8) {
+				if (inputBuffer.length > 0) {
+					inputBuffer = inputBuffer.slice(0, -1);
+					term.write('\b \b');
+				}
+			} else if (key.length === 1) {
+				inputBuffer += key;
+				term.write(key);
+			}
+		});
+	</script>
+
+	<script>
+		document.querySelectorAll('.nav-drop-toggle').forEach(function(t) {
+			t.addEventListener('click', function(e) {
+				if (window.matchMedia('(hover: hover)').matches) return;
+				var dd = t.closest('.nav-dropdown');
+				if (dd.classList.contains('open')) { return; }
+				dd.classList.add('open');
+				e.preventDefault();
+				e.stopPropagation();
+			});
+		});
+		document.addEventListener('click', function() {
+			document.querySelectorAll('.nav-dropdown').forEach(function(d) { d.classList.remove('open'); });
+		});
+	</script>
+
+</body>
+
+</html>

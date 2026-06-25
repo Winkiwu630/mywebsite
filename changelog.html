@@ -36,7 +36,7 @@
 	<div class="hero">
 		<img src="images/headshot.jpg" alt="Wesley Elliott" class="hero-avatar">
 		<h1>TheCodingNewbie</h1>
-		<p class="tagline">Wesley Elliott <br> Aspiring Web Developer</p>
+		<p class="tagline">Wesley Elliott <br> Dev in Progress | Web &amp; Cloud</p>
 	</div>
 
 	  <main>
@@ -48,6 +48,7 @@
 				<div class="nav-drop-menu">
 					<a href="websites.html">Websites</a>
 					<a href="astro.html">Astrophotography</a>
+					<a href="zork.html">Zork on EC2</a>
 				</div>
 			</div>
 			<a href="changelog.html" class="active">Patch Notes</a>
@@ -182,9 +183,11 @@
 				Patch Notes:
 					<ul>
 						<li>Set up an agent to assist with media server tasks. I shall call him "Guppy". Bobiverse, check it out.</li>
-						<li>Linked media request form to agent to allow for remote addition of media.</li>
-						<li>Linked Claude Code from Homelab to Github to assist with linking webhook to Guppy.</li>
-						<li>Set up Claude Code (AI coding assistant) on the homelab, accessible via browser through Cloudflare Tunnel.</li>
+							<ul>
+								<li>Linked media request form to agent to allow for remote addition of media.</li>
+								<li>Linked Claude Code from Homelab to Github to assist with linking webhook to Guppy.</li>
+								</ul>
+						<li>Set up Claude Code (AI coding assistant) on the homelab, accessible via browser through Cloudflare Tunnel (TTYD).</li>
 						<li>Fixed DOCTYPE errors on several pages.</li>
 						<li>Fixed multiple spelling errors across several pages.</li>
 					</ul>
@@ -225,16 +228,35 @@
 					<ul>
 						<li>Rewrote the home page and added a hero section.</li>
 						<li>Renamed "Forms" to "Contact" and set up a real contact form with name, email, budget range and message using Formspree.</li>
-						<li>Turned the Links page into a hidden page. Removed it from the nav, only people I send the link to can find it.</li>
+						<li>Turned the <strong>REDACTED</strong> page into a hidden page. Removed it from the nav, only people I send the link to can find it.</li>
 						<li>Reordered the projects page.</li>
 						<li>Archived current site as version 1.6 in historical snapshots.</li>
-						<li>Big CSS overhaul. Switched to a color palette pulled from the background image. Forest green hero, soft green card backgrounds, lime accents throughout.</li>
+						<li>Big CSS overhaul. Switched to a color palette pulled from the orginal background image. Forest green hero, soft green card backgrounds, lime accents throughout.</li>
 						<li>Hero now spans the full width of the page like the footer instead of being boxed in.</li>
-						<li>Added my face to the hero as a circular avatar. Boat photo won.</li>
+						<li>Added my face to the hero as a circular avatar.</li>
 						<li>Added photos to the "Who Am I" section. Baby goat and the swing pic.</li>
 						<li>Added a "Why Choose Me" section to the home page for anyone who lands here looking for someone to build their site.</li>
-						<li>Astrophotography section upgraded from "Coming Soon" to an actual gallery page with 13 shots from the Seestar S50.</li>
-						<li>Built a lightbox viewer for the gallery. Click any photo to open it full screen, arrow buttons or keyboard to navigate, scroll wheel to zoom, click and drag to pan around when zoomed in.</li>
+						<li>Astrophotography section upgraded from "Coming Soon" to an actual gallery page.</li>
+						<li>Added a lightbox viewer for the Astrophotography gallery.</li>
+					</ul>
+	</ul>
+		</section>
+
+		<section>
+	<ul>
+			<li>6/25/2026</li>
+				Patch Notes:
+					<ul>
+						<li>Started the AWS Cloud Practitioner course on Codecademy. Pivoting to cloud since it's a more direct path into IT without as big of a pay cut.</li>
+						<li>Created an AWS account. Spun up my first EC2 instance on Amazon Linux 2023. Set up key pair auth, security groups, and got in via SSH.</li>
+							<ul>
+								<li>Created an S3 bucket and configured IAM roles so the instance can read from it without credentials in the code.</li>
+								<li>Set up CloudWatch monitoring. CPU, memory, and disk. Wired an SNS topic to email me if something spikes.</li>
+								<li>Built a Flask WebSocket server that runs Zork in a subprocess and streams it to a browser in real time.</li>
+								<li>Uploaded zork1.z5 to S3. Server now pulls it down at startup using the instance's IAM role.</li>
+							</ul>
+						<li>Added zork.html, live Zork terminal with a writeup of the stack running behind it.</li>
+						<li>Updated projects page and nav to include Zork on EC2 and the AWS cert.</li>
 					</ul>
 	</ul>
 		</section>
