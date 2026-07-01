@@ -120,11 +120,7 @@
 			<a href="forms.html">Contact</a>
 		</nav>
 
-		<div style="background:#fff3cd; color:#856404; border:1px solid #ffc107; border-radius:8px; padding:14px 18px; margin-bottom:18px; font-weight:bold;">
-			&#9888; Coming Soon! Network configuration in progress. The terminal below won't connect yet. SSL and DNS setup are still pending. Check back soon.
-		</div>
-
-		<section>
+<section>
 			<h2>Zork I on AWS EC2 <span style="font-size:0.75rem; background:#d4edda; color:#155724; border-radius:4px; padding:2px 8px; margin-left:8px; font-weight:normal;">Live</span></h2>
 			<p><strong>Stack:</strong> AWS EC2 &nbsp;·&nbsp; AWS S3 &nbsp;·&nbsp; IAM Roles &nbsp;·&nbsp; CloudWatch &nbsp;·&nbsp; Python &nbsp;·&nbsp; Flask &nbsp;·&nbsp; WebSocket &nbsp;·&nbsp; dfrotz</p>
 			<p>The terminal below is running live on an AWS EC2 instance. When you type a command and hit Enter, it gets sent over a WebSocket connection to a Python server on that instance, which passes it to a Z-machine interpreter running Zork I. The game file lives in an S3 bucket and is pulled down at server startup using the EC2's IAM role.</p>
@@ -203,7 +199,7 @@
 			statusText.textContent = text;
 		}
 
-		const ws = new WebSocket('ws://18.225.183.180:5000/zork');
+		const ws = new WebSocket('wss://zork.thecodingnewbie.com/zork');
 		let inputBuffer = '';
 
 		ws.onopen = () => {
