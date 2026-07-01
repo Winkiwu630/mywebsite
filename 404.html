@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" href="styles.css">
+	<title>404 - Page Not Found | TheCodingNewbie</title>
+</head>
+
+<body>
+
+	<div class="hero">
+		<img src="images/headshot.jpg" alt="Wesley Elliott" class="hero-avatar">
+		<h1>TheCodingNewbie</h1>
+		<p class="tagline">Wesley Elliott <br> Dev in Progress | Web &amp; Cloud</p>
+	</div>
+
+	<main>
+
+		<nav>
+			<a href="index.html">Home</a>
+			<div class="nav-dropdown">
+				<a href="projects.html" class="nav-drop-toggle">Projects &#9662;</a>
+				<div class="nav-drop-menu">
+					<a href="websites.html">Websites</a>
+					<a href="astro.html">Astrophotography</a>
+					<a href="zork.html">Zork on EC2</a>
+				</div>
+			</div>
+			<a href="changelog.html">Patch Notes</a>
+			<a href="forms.html">Contact</a>
+		</nav>
+
+		<section style="text-align: center; padding: 40px 20px;">
+			<h2>404 - Page Not Found</h2>
+			<p>That page doesn't exist or has been moved.</p>
+			<p style="margin-top: 20px;">
+				<a href="index.html" class="button-link">Back to Home</a>
+			</p>
+		</section>
+
+	</main>
+
+	<footer>
+		<p>&copy; 2026 Wesley Elliott | thecodingnewbie.com</p>
+		<p class="footer-links">
+			<a href="mailto:thecodingnewbie94@gmail.com">thecodingnewbie94@gmail.com</a>
+		</p>
+		<p class="footer-credit">Designed by <a href="index.html">TheCodingNewbie</a></p>
+	</footer>
+
+	<script>
+		document.querySelectorAll('.nav-drop-toggle').forEach(function(t) {
+			t.addEventListener('click', function(e) {
+			if (window.matchMedia('(hover: hover)').matches) return;
+				var dd = t.closest('.nav-dropdown');
+				if (dd.classList.contains('open')) {
+					return;
+				}
+				dd.classList.add('open');
+				e.preventDefault();
+				e.stopPropagation();
+			});
+		});
+		document.addEventListener('click', function() {
+			document.querySelectorAll('.nav-dropdown').forEach(function(d) { d.classList.remove('open'); });
+		});
+	</script>
+
+</body>
+
+</html>
